@@ -1,0 +1,61 @@
+#luiza-box {
+  background: #fc0000;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-family: Arial;
+}
+
+.luiza-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.luiza-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.luiza-tab {
+  flex: 1;
+  padding: 6px;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.luiza-tab.ativo {
+  background: #555;
+}
+
+.luiza-btn {
+  width: 100%;
+  padding: 10px;
+  background: red;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.luiza-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.luiza-output {
+  background: #222;
+  padding: 10px;
+  border-radius: 4px;
+  min-height: 120px;
+  white-space: pre-wrap;
+  font-size: 13px;
+}
