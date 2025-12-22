@@ -1,8 +1,9 @@
 FROM node:20-bullseye
 
-# Instala yt-dlp e ffmpeg
+# Instala dependências do sistema
 RUN apt-get update && \
-    apt-get install -y yt-dlp ffmpeg && \
+    apt-get install -y ffmpeg python3 python3-pip && \
+    pip3 install -U yt-dlp && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -13,4 +14,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD ["npm", "start"] 
+CMD ["npm", "start"]
