@@ -41,9 +41,26 @@ app.post("/transcrever", async (req, res) => {
   try {
     console.log(`📥 Baixando áudio de: ${videoUrl}`);
     
-    await execPromise(
-      `yt-dlp -f bestaudio --extract-audio --audio-format mp3 -o "${file}" "${videoUrl}"`
-    );
+    // SOLUÇÃO: Usar cliente Android + formato específico + nodejs runtime
+    const ytDlpCommand = [
+      'yt-dlp',
+      '--extractor-args "youtube:player_client=android"',
+      '--format "bestaudio[ext=m4a]/bestaudio/best"',
+      '--extract-audio',
+      '--audio-format mp3',
+      '--no-playlist',
+      '--no-warnings',
+      `--output "${file}"`,
+      `"${videoUrl}"`
+    ].join(' ');
+
+    console.log(`🔧 Executando: ${ytDlpCommand}`);
+
+    await execPromise(ytDlpCommand);
+
+    if (!fs.existsSync(file)) {
+      throw new Error("Arquivo de áudio não foi gerado");
+    }
 
     console.log(`🎤 Transcrevendo áudio: ${file}`);
 
@@ -58,10 +75,11 @@ app.post("/transcrever", async (req, res) => {
     res.json({ text: transcription.text });
 
   } catch (err) {
-    console.error("❌ Erro:", err);
+    console.error("❌ Erro completo:", err);
     if (fs.existsSync(file)) fs.unlinkSync(file);
     res.status(500).json({ 
-      error: "Erro ao transcrever vídeo: " + (err.message || err) 
+      error: "Erro ao transcrever vídeo: " + (err.message || err),
+      details: err.stderr || err.stdout || "Sem detalhes adicionais"
     });
   }
 });
