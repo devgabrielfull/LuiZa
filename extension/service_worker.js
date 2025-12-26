@@ -1,6 +1,6 @@
 console.log("🔥 Service Worker Luiza REGISTRADO");
 
-const BACKEND_URL = "https://SEU-APP.onrender.com/transcrever";
+const BACKEND_URL = "https://luiza-backend.onrender.com/transcrever";
 
 chrome.runtime.onInstalled.addListener(() => {
   console.log("✅ Extensão instalada");
