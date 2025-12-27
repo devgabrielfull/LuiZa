@@ -4,9 +4,10 @@ services:
     env: node
     rootDir: backend
     buildCommand: |
-      apt-get update
+      apt-get update -qq
       apt-get install -y python3 python3-pip ffmpeg
-      pip3 install -r requirements.txt
+      pip3 install --upgrade pip
+      pip3 install pytubefix==6.16.1 pydub==0.25.1
       npm install
     startCommand: node server.js
     envVars:
