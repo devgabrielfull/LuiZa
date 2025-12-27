@@ -6,7 +6,7 @@ import os
 
 def download_audio(video_url, output_file):
     try:
-        print(f"�� Conectando ao YouTube: {video_url}")
+        print(f"🔗 Conectando ao YouTube: {video_url}")
         yt = YouTube(video_url)
         print(f"📹 Título: {yt.title}")
         print(f"⏱️ Duração: {yt.length}s")
