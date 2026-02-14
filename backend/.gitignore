@@ -1,0 +1,8 @@
+node_modules/
+.env
+temp/*.mp3
+temp/*.m4a
+temp/*.webm
+.DS_Store
+coverage/
+*.log
