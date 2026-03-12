@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Transcribe</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎬 YouTube Transcribe</h1>
+    </header>
+    
+    <main>
+      <div id="status" class="status">
+        <p>Clique no botão para transcrever o vídeo atual</p>
+      </div>
+
+      <button id="transcribeBtn" class="btn-primary">
+        Transcrever Vídeo
+      </button>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Transcrevendo... Isso pode levar alguns minutos.</p>
+      </div>
+
+      <div id="result" class="result hidden">
+        <h2>Transcrição:</h2>
+        <div id="transcription" class="transcription"></div>
+        <button id="copyBtn" class="btn-secondary">
+          📋 Copiar Transcrição
+        </button>
+        <button id="downloadBtn" class="btn-secondary">
+          💾 Baixar TXT
+        </button>
+      </div>
+
+      <div id="error" class="error hidden">
+        <p id="errorMessage"></p>
+      </div>
+    </main>
+
+    <footer>
+      <p>Configure o backend em: <code>localhost:3333</code></p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
