@@ -1,5 +1,5 @@
 Minha extensão que transcreve seus vídeos com apenas 1 clique.
-
+Obs:os arquivos em backend disponiveis aqui são os que usei para escrever codigos pois os aplicativos são apenas baixados aqui mesmo pelo github... e não são meus
 
 A Estrutura é:
 [YouTube] → [Extensão Chrome] → [Backend Node.js :3333] → [yt-dlp + ffmpeg] → [Whisper API] → [Transcrição]
