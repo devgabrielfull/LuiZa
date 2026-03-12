@@ -1,7 +1,7 @@
-Extensão Chrome que transcreve vídeos do YouTube usando a API Whisper da OpenAI.
-O áudio é processado localmente via yt-dlp e ffmpeg, e a transcrição é retornada com timestamps por segmento.
+Minha extensão que transcreve seus vídeos com apenas 1 clique.
 
-📸 Como funciona
+
+A Estrutura é:
 [YouTube] → [Extensão Chrome] → [Backend Node.js :3333] → [yt-dlp + ffmpeg] → [Whisper API] → [Transcrição]
 
 Usuário abre um vídeo no YouTube e clica em "Transcrever Vídeo"
